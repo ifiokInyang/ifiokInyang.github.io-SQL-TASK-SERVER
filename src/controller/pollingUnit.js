@@ -1,16 +1,19 @@
+import database from "../dbConfig/config.js";
+import { queryPollingUnitResults } from "../DbQuery/query.js";
+
 //Solution 1
-export const getPollingUnit = async (req, res) => {
-    try {
-      const id = req.params.id;
-      const query = `SELECT * FROM bincom_test.announced_pu_results WHERE polling_unit_uniqueid = ${id}`;
-      conn.query(query, (err, results) => {
-        if (err) throw err;
-  
-        return res.json({ results });
-      });
-    } catch (error) {
-      console.log(error);
-      throw new Error(error);
-    }
-  };
-  
+export const getPollingUnitResultsByParty = async (req, res) => {
+  try {
+    const id = req.params.id;
+    return queryPollingUnitResults(res, id);
+
+  } catch (error) {
+    console.log(error);
+    return res.status(500).json({
+      Error: error,
+      route: "/polling-unit/:id",
+    });
+  }
+};
+
+

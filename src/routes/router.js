@@ -1,13 +1,8 @@
 import express from "express";
-import { getPollingUnit } from "../controller/pollingUnit.js";
-
+import { getPollingUnitResultsByParty } from "../controller/pollingUnit.js";
 
 const router = express.Router();
 
-
-router.get("/:id", getPollingUnit)
-
-
-
+router.get("/:id", getPollingUnitResultsByParty);
 
 export default router;

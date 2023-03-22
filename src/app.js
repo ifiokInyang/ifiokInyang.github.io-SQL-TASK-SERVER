@@ -2,7 +2,6 @@ import express from "express";
 import logger from "morgan";
 import cors from "cors";
 import dotenv from "dotenv";
-import { dbConfig } from "./dbConfig/config.js";
 import PollingUnitRoutes from "./routes/router.js"
 dotenv.config();
 
@@ -28,7 +27,7 @@ const PORT = process.env.PORT || 4000
 const server = async() => {
     try {
         
-        await dbConfig()
+        // await dbConfig()
     
          app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`)

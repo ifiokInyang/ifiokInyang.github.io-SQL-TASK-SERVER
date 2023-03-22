@@ -1,6 +1,6 @@
 import mysql from "mysql2";
 
-export const dbConfig = async() => {
+// export const dbConfig = async() => {
     const database = mysql.createConnection({
         database: "bincom_test",
         host: "127.0.0.1",
@@ -16,4 +16,6 @@ export const dbConfig = async() => {
         console.log("Database connected successfully!!")
     })
 
-}
+
+    export default database;
+// }
