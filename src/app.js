@@ -3,6 +3,7 @@ import logger from "morgan";
 import cors from "cors";
 import dotenv from "dotenv";
 import { dbConfig } from "./dbConfig/config.js";
+import PollingUnitRoutes from "./routes/router.js"
 dotenv.config();
 
 
@@ -12,7 +13,7 @@ const app = express()
 app.use(cors());
 app.use(logger("dev"));
 app.use(express.json());
-
+app.use("/polling-unit", PollingUnitRoutes)
 
 app.get("/", (req, res) => {
     res.status(200).json({
