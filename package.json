@@ -1,0 +1,21 @@
+{
+  "name": "sql-task-server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/ifiokInyang/ifiokInyang.github.io-SQL-TASK-SERVER.git",
+  "author": "ifiokInyang <ifiok.inyang@decagon.dev>",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon src/app.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "http-error": "^0.0.6",
+    "morgan": "^1.10.0",
+    "mysql2": "^3.2.0",
+    "nodemon": "^2.0.21"
+  }
+}
