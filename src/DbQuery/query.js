@@ -60,7 +60,7 @@ export const inserPartyResult = (req, res) => {
     if (err) {
       return res.status(400).json(err);
     }
-    return res.status(200).json({
+    return res.status(201).json({
       message: "Successfully added entry",
       results
     });
